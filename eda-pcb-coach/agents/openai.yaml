@@ -1,0 +1,4 @@
+interface:
+  display_name: "EDA PCB Coach"
+  short_description: "Plan practical contest and DIY PCBs with JLC EDA guidance."
+  default_prompt: "Use $eda-pcb-coach to turn my PCB idea into a practical design plan and guide me through drawing it in JLC EDA."
