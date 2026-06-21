@@ -1,8 +1,7 @@
 # strong_cong-skill
 
-这里收录我自己常用、也愿意分享给大家的 Agent Skills。每个 Skill 都使用独立文件夹保存，可以按需单独安装。
-
-适用于支持 [Agent Skills 开放规范](https://agentskills.io/) 的 AI 编程工具，如 Codex、Claude Code 等。
+这里收录我自己常用的 Skills。每个 Skill 都使用独立文件夹保存，可以按需单独安装。
+希望对大家能有所帮助.
 
 ## Skill 目录
 
