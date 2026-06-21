@@ -1,0 +1,4 @@
+interface:
+  display_name: "Laicong Writer / 赖聪写作风格"
+  short_description: "把碎片想法写成更共情、轻结构、保留个人味道的表达内容"
+  default_prompt: "Use $laicong-writer to turn my fragmented notes into a better, lightly structured, empathetic post that still sounds like me."
