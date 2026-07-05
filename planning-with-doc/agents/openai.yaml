@@ -1,0 +1,4 @@
+interface:
+  display_name: "Planning With Doc / 开发任务拆解"
+  short_description: "用一份开发任务拆解文档串起方案、任务和进度"
+  default_prompt: "Use $planning-with-doc to discuss my project plan, break it into executable tasks, and track progress in one 开发任务拆解.md file."

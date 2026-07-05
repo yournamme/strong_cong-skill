@@ -10,6 +10,7 @@
 | --- | --- | --- |
 | [eda-pcb-coach](./eda-pcb-coach) | 面向电子竞赛、课程项目和 DIY 的 PCB 设计教练，帮你从想法梳理到嘉立创 EDA 绘制、检查和打板。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/eda-pcb-coach) |
 | [laicong-writer](./laicong-writer) | 赖聪个人写作风格与共情型内容创作 Skill，把零散想法整理成真诚、有温度、又保留个人味道的中文表达。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/laicong-writer) |
+| [planning-with-doc](./planning-with-doc) | 用一份 `开发任务拆解.md` 串起方案讨论、任务拆解、执行追踪和变更记录，适合多轮 AI 协同开发项目。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/planning-with-doc) |
 
 ## eda-pcb-coach
 
@@ -81,6 +82,38 @@
 用 $laicong-writer 帮我把这些碎片整理成一篇更共情、结构更顺、但还是像我自己的分享。
 ```
 
+## planning-with-doc
+
+`planning-with-doc` 是一套面向项目开发的文档化协作 Skill，尤其适合电子信息工程比赛、课程项目，以及需要多个 AI agent 分阶段协作的开发过程。它把方案讨论、任务拆解、执行日志、变更记录和异常处理都收敛到同一份 `开发任务拆解.md` 里，让新会话接手时能直接回溯项目发生过什么、做到哪一步。
+
+### 它能做什么？
+
+- 把模糊想法收敛成够用、能落地的 MVP 方案。
+- 根据项目规模选择简单模式或完整任务拆解模式，避免过度拆分。
+- 把任务写到新会话/新 agent 可以直接接手执行的详细程度。
+- 用 🤖/🔍/🤝/🧑 标注任务执行者和检查点，区分 AI 可连续推进与需要用户确认的节点。
+- 在同一份 `开发任务拆解.md` 中追加执行日志、变更日志和异常记录，保留完整历史。
+
+### 如何使用
+
+安装后，可以直接对 Agent 说：
+
+```text
+请使用 planning-with-doc，帮我把这个课程项目先讨论成一个可落地方案，再拆成开发任务，并生成一份开发任务拆解.md。
+```
+
+也可以针对已有项目继续推进：
+
+```text
+使用 planning-with-doc，读取我项目里的开发任务拆解.md，看看现在做到哪一步了，然后从最早的未完成任务继续。
+```
+
+如果工具支持 `$skill-name` 语法，也可以写：
+
+```text
+用 $planning-with-doc 帮我维护这个项目的开发任务拆解.md，不要额外开 progress 文件。
+```
+
 ## 安装方式
 
 ### 方式一：让 Agent 自动安装
@@ -146,6 +179,12 @@ strong_cong-skill/
 │   └── references/
 │       ├── examples.md
 │       └── style-profile.md
+├── planning-with-doc/
+│   ├── SKILL.md
+│   ├── agents/
+│   │   └── openai.yaml
+│   └── references/
+│       └── task-doc-template.md
 ├── LICENSE
 └── README.md
 ```
