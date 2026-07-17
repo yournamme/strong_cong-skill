@@ -2,6 +2,32 @@
 
 Use these templates when the user asks for a PCB plan, BOM, schematic guidance, layout guidance, or progress tracking.
 
+For a **new design**, always put the "Quick Overview Block" immediately before "Practical PCB Solution" in the same message. For a **board modification**, use "Board Modification Output" instead of regenerating "Practical PCB Solution" from scratch.
+
+## Quick Overview Block (方案速览) — New Design Only
+
+Always the first thing in the message, before any detailed section. Keep it short enough to read in a few seconds.
+
+```markdown
+## 方案速览
+- 项目:
+- 一句话总结:
+- 板子大小(估算):
+- 层数:
+- 供电方式:
+- 用到的核心方案:
+  -
+- 能实现的功能:
+  -
+- 暂不支持:
+  -
+- 关键假设/权衡:
+  -
+- 这版本建议你重点检查的点:
+  -
+- 版本: vN
+```
+
 ## Practical PCB Solution
 
 ```markdown
@@ -87,6 +113,57 @@ Use a simple Mermaid block when helpful, for example:
 ## 13. 下一步
 ```
 
+## Board Modification Output (基于现有板卡修改)
+
+Use this instead of "Practical PCB Solution" whenever the user is modifying an existing board (their own prior revision, an open-source reference design, a dev board). Lead with what changed; do not re-derive the whole board.
+
+```markdown
+# 板卡改动方案 vN
+
+## 改动速览
+- 基线来源: (板子名称/仓库链接/版本, 依据的资料: 原理图文件/PDF/照片/BOM)
+- 本次改动目标:
+- 改动影响范围: 原理图 / 布局 / BOM / 功能 / 尺寸 (标出实际涉及哪些)
+
+## 改动详情
+| 编号 | 位置/模块(具体到位号/网络/连接器) | 原方案 | 改为 | 原因 | 影响范围 | 需要复核 |
+|---:|---|---|---|---|---|---|
+
+## 其余部分保持原样
+-
+
+## 本次改动的风险和复核项
+-
+
+## 待确认问题
+| 问题 | 为什么需要确认 | 确认方式 |
+|---|---|---|
+
+## 下一步
+```
+
+Rules for filling this in:
+
+- "位置/模块" must name the exact reference designator, net name, connector, or footprint — never a vague area like "电源部分" or "接口那里".
+- Only expand a full block diagram / full BOM / full layout section when the change is broad enough to need it (e.g., swapping the MCU family). For a localized change (e.g., swap one regulator, add one connector, widen one trace), the change table plus "其余部分保持原样" is the whole deliverable.
+- If the user hasn't provided the baseline artifact yet (schematic, PDF, photo, repo link, or existing `pcb-design-plan.md`), ask for it before producing this output — do not guess at an unseen board's current state.
+
+## Discussion Round Update (本轮讨论更新)
+
+Use this from the second round onward, whenever the user pushes back on a draft (new design or board modification) that isn't confirmed yet. Do not re-output the full solution — this compact update is the whole deliverable for that round.
+
+```markdown
+## 本轮讨论更新
+- 你的问题/关注点:
+- 结论:
+- 改动:
+| 位置/模块 | 原方案 | 改为 | 原因 | 影响 |
+|---|---|---|---|---|
+- 方案速览/改动速览是否需要更新: (若有字段变化，把更新后的完整速览块重新贴一遍；否则写"无变化")
+```
+
+Switch back to a full "New Design Output" or "Board Modification Output" only when the user asks for the whole thing restated, when the diff has grown large enough that it's harder to read than a fresh version, or when the user approves the draft as a confirmed version.
+
 ## BOM Template
 
 ```markdown
@@ -109,6 +186,7 @@ Use a simple Mermaid block when helpful, for example:
 - 尺寸/安装约束:
 - 预算/工期:
 - 制作方式:
+- 基线来源(仅基于现有板卡修改时填写: 板子/仓库名称、版本、依据资料):
 
 ## 2. 当前确认方案
 - 当前版本:
@@ -174,10 +252,10 @@ Use a simple Mermaid block when helpful, for example:
 | 未确认项处理 | | |
 
 ## 12. 方案变更记录
-### YYYY-MM-DD HH:MM
-- 变更:
-- 原因:
-- 影响:
+> 基于现有板卡修改的项目，优先用下面的改动表记录每次变更，而不是整段文字重写；新设计项目的重大版本变化可以用简短的文字条目。
+
+| 日期 | 位置/模块 | 原方案 | 改为 | 原因 | 影响范围 |
+|---|---|---|---|---|---|
 ```
 
 ### `pcb-progress.md`
