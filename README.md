@@ -8,7 +8,7 @@
 
 | 名称 | 一句话介绍 | 详情与下载 |
 | --- | --- | --- |
-| [eda-pcb-coach](./eda-pcb-coach) | 面向电子竞赛、课程项目和 DIY 的 PCB 设计教练，帮你从想法梳理到嘉立创 EDA 绘制、检查和打板。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/eda-pcb-coach) |
+| [eda-pcb-coach](./eda-pcb-coach) | 面向电子竞赛、课程项目和 DIY 的 PCB 设计陪练，支持从零设计或已有板改版，覆盖方案讨论、嘉立创 EDA 绘制、检查、打板与文档追踪。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/eda-pcb-coach) |
 | [laicong-writer](./laicong-writer) | 赖聪个人写作风格与共情型内容创作 Skill，把零散想法整理成真诚、有温度、又保留个人味道的中文表达。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/laicong-writer) |
 | [planning-with-doc](./planning-with-doc) | 用一份 `开发任务拆解.md` 串起方案讨论、任务拆解、执行追踪和变更记录，适合多轮 AI 协同开发项目。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/planning-with-doc) |
 
@@ -16,13 +16,17 @@
 
 `eda-pcb-coach` 是一个面向学生、电子竞赛参与者和硬件爱好者的 PCB 设计陪练 Skill。它不会只丢给你一张电路图，而是会根据你的目标、接口、电源、尺寸、预算和焊接能力，逐步整理出能实际落地的方案，并指导你在嘉立创 EDA 专业版（EasyEDA Pro）中完成原理图和 PCB。
 
+无论你是从零开始做一块新板，还是要基于已有原理图、PCB、BOM 或开源参考板做改版，它都会先确认基线和改动范围；方案会以便于讨论的草案形式持续迭代，而不是一开始就把未经核实的内容当成定稿。
+
 ### 它能做什么？
 
 - 把模糊的项目想法整理成可执行的 PCB 设计需求。
+- 区分“从零设计”和“已有板改版”：改版时围绕具体器件、网络或封装列出变更与影响，不把整块板重新推导一遍。
 - 规划电源、主控、传感器、驱动、通信、保护和调试模块。
 - 辅助选择常用、易采购、适合手焊的器件，并生成核心 BOM。
 - 给出电源树、接口与引脚分配、原理图绘制顺序和布局布线策略。
 - 分步骤指导嘉立创 EDA 专业版的原理图、封装、PCB、铺铜、ERC/DRC 和 Gerber 导出。
+- 按完整模块讲解绘制与检查流程，方便在每一轮方案讨论后继续推进，而不会被零碎步骤打断。
 - 针对竞赛和 DIY 板增加测试点、状态灯、下载调试口、丝印和首版调试建议。
 - 在长对话中维护 `pcb-design-plan.md` 和 `pcb-progress.md`，记录已确认方案与实际绘制进度。
 
