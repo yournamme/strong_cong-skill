@@ -12,6 +12,7 @@
 | [laicong-writer](./laicong-writer) | 赖聪个人写作风格与共情型内容创作 Skill，把零散想法整理成真诚、有温度、又保留个人味道的中文表达。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/laicong-writer) |
 | [planning-with-doc](./planning-with-doc) | 用一份 `开发任务拆解.md` 串起方案讨论、任务拆解、执行追踪和变更记录，适合多轮 AI 协同开发项目。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/planning-with-doc) |
 | [dev-idea-selector](./dev-idea-selector) | 开发副业选题路由：AI 自动帮你从 Obsidian 素材、真实需求、市场参考里筛出 3-5 个开发候选，你拍板后交给 vibe_coding 去开发。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/dev-idea-selector) |
+| [article-to-video](./article-to-video) | 图文转视频：把一篇公众号文章自动转成短视频制作四件套（口播稿、UI卡片、分镜+生图提示词、拍摄包）。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/article-to-video) |
 
 ## eda-pcb-coach
 
@@ -164,6 +165,37 @@
 
 拍板之后，把选中的选题交给 `planning-with-doc`（方案讨论→任务拆解→开发）或 vibe_coding 工作流继续，完成后再把成品/过程变回内容，闭环回到灵感源。
 
+## article-to-video
+
+`article-to-video` 是一个"图文转视频"内容生产 Skill。它把公众号图文和短视频当成同一套素材的两种切法：**视频给故事+卡片，图文给细节+清单**。把一篇公众号文章丢进去，它会按你验证过的 4 步转化法，产出可直接开工的短视频四件套——口播稿、UI 卡片、分镜+生图提示词、拍摄包。
+
+它不会帮你录音、剪映或发布，那些仍是人肉环节；它把最耗脑的"从文章到脚本"这一跳自动化，让文章变成视频的第一步不再是开一个空白文档。
+
+### 它能做什么？
+
+- 从一篇公众号文章里只抽一个"一句话能讲痛"的问题，一条视频只救一个问题。
+- 按钩子→共情→3 要点→金句的四段式结构生成 ≤220 字口播稿，分段带字数预算（钩子≤30 / 共情≤40 / 要点合计≤90 / 金句≤25），并标注每段实际字数。
+- 把每个要点凝成 ≤15 字的 UI 卡片文案，优先复用原文小标题。
+- 生成 5-6 个分镜 + 即梦/生图提示词（竖屏 9:16、浅色纯色背景、上方留白、无文字），内置角色锚点图机制保证多张图人物形象统一。
+- 输出带双链占位和时间线模板的拍摄包骨架（生图 → 录音 → 剪映 → 发布）。
+- 觉得稿子浅时自动走"内容深化三层"（为什么/规律/观众能带走什么）补深度，红线是不堆方法论名词。
+
+### 如何使用
+
+安装后，可以直接对 Agent 说：
+
+```text
+请使用 article-to-video，把这篇公众号文章转成一条 B 站竖屏短视频的四件套。
+```
+
+粘贴文章全文后，它会按流程产出口播稿、UI 卡片、分镜提示词和拍摄包；如果文章里有多个可讲的问题，它会列出来让你挑一个，不自行合并。
+
+如果工具支持 `$skill-name` 语法，也可以写：
+
+```text
+用 $article-to-video 把这篇笔记变成口播稿和分镜。
+```
+
 ## 安装方式
 
 ### 方式一：让 Agent 自动安装
@@ -241,6 +273,8 @@ strong_cong-skill/
 │   │   └── openai.yaml
 │   └── assets/
 │       └── selection-pool-template.md
+├── article-to-video/
+│   └── SKILL.md
 ├── LICENSE
 └── README.md
 ```
