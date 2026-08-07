@@ -237,8 +237,10 @@ strong_cong-skill/
 │       └── task-doc-template.md
 ├── dev-idea-selector/
 │   ├── SKILL.md
-│   └── agents/
-│       └── openai.yaml
+│   ├── agents/
+│   │   └── openai.yaml
+│   └── assets/
+│       └── selection-pool-template.md
 ├── LICENSE
 └── README.md
 ```

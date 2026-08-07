@@ -1,4 +1,9 @@
 interface:
   display_name: "Dev Idea Selector / 开发选题路由"
-  short_description: "AI 自动帮你从灵感源里筛出该开发什么，你拍板后交给 vibe_coding 去开发"
-  default_prompt: "Use $dev-idea-selector to pick what I should build next — pull from my Obsidian, filter with the three tests, and hand me 3-5 candidates to choose from."
+  short_description: "从 Obsidian 素材、真实麻烦和市场里筛出该开发什么，打分排序给你 3-5 个候选，拍板后交棒给 vibe_coding"
+  default_prompt: "Use $dev-idea-selector to pick what I should build next — read my Obsidian vault and the existing 开发选题池.md, apply the three hard gates, rank by content potential, and give me 3-5 candidate cards to choose from."
+  examples:
+    - "帮我挖开发灵感，看看下一个该做什么"
+    - "接着上次的开发选题继续"
+    - "我这几个想法帮我看看先做哪个"
+    - "快速模式，就给我三个候选"
