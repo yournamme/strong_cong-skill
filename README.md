@@ -11,6 +11,7 @@
 | [eda-pcb-coach](./eda-pcb-coach) | 面向电子竞赛、课程项目和 DIY 的 PCB 设计陪练，支持从零设计或已有板改版，覆盖方案讨论、嘉立创 EDA 绘制、检查、打板与文档追踪。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/eda-pcb-coach) |
 | [laicong-writer](./laicong-writer) | 赖聪个人写作风格与共情型内容创作 Skill，把零散想法整理成真诚、有温度、又保留个人味道的中文表达。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/laicong-writer) |
 | [planning-with-doc](./planning-with-doc) | 用一份 `开发任务拆解.md` 串起方案讨论、任务拆解、执行追踪和变更记录，适合多轮 AI 协同开发项目。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/planning-with-doc) |
+| [dev-idea-selector](./dev-idea-selector) | 开发副业选题路由：AI 自动帮你从 Obsidian 素材、真实需求、市场参考里筛出 3-5 个开发候选，你拍板后交给 vibe_coding 去开发。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/dev-idea-selector) |
 
 ## eda-pcb-coach
 
@@ -127,6 +128,42 @@
 用 $planning-with-doc 帮我维护这个项目的开发任务拆解.md，不要额外开 progress 文件。
 ```
 
+## dev-idea-selector
+
+`dev-idea-selector` 是一个"开发副业选题路由"Skill。它解决的不是"怎么开发"，而是"**该开发什么**"。很多用 AI 搞开发的人卡在第一步：网上看别人做的小工具、小游戏、硬件项目，感觉"很容易做、又有用"，但轮到自己想一个就想不出来。这个 Skill 把"凭感觉想选题"变成"AI 按标准筛选题"。
+
+它特别适合两条线互相喂的场景：AI 开发产出作品，开发过程本身变成自媒体内容，内容的反馈又变回下一个开发灵感。这个 Skill 负责整条线最前面的"选"这一环。
+
+### 它能做什么？
+
+- 从四个灵感源采集候选：Obsidian 素材池（最优先）、自己反复遇到的麻烦、市场已验证的需求品类、自媒体内容反馈。
+- 用三条过滤线筛选题：是否解决一个真实的小麻烦、是否 1-2 周能出 MVP、过程/成品能否变成至少一条内容。三把都中才进候选。
+- 结合用户底子（嵌入式、单片机、电赛、硬件、AI agent）做匹配加分。
+- 产出 3-5 个统一格式的开发候选（做什么/给谁用/解决什么/ MVP 多大/怎么变内容/怎么算有价值），让用户拍板。
+- 持续维护一份 `开发选题池.md`（像自媒体的选题池一样，按系列分组、标状态、拍过的划掉），候选没被选中的保留待定，以后还能捡回来。
+
+### 如何使用
+
+安装后，可以直接对 Agent 说：
+
+```text
+请使用 dev-idea-selector，帮我挖开发灵感，筛出 3-5 个候选给我选。
+```
+
+也可以先丢想法再筛：
+
+```text
+使用 dev-idea-selector，这是我手头几个想法，帮我按三条过滤线选哪个先做。
+```
+
+如果工具支持 `$skill-name` 语法，也可以写：
+
+```text
+用 $dev-idea-selector 帮我选下一个该开发什么。
+```
+
+拍板之后，把选中的选题交给 `planning-with-doc`（方案讨论→任务拆解→开发）或 vibe_coding 工作流继续，完成后再把成品/过程变回内容，闭环回到灵感源。
+
 ## 安装方式
 
 ### 方式一：让 Agent 自动安装
@@ -198,6 +235,10 @@ strong_cong-skill/
 │   │   └── openai.yaml
 │   └── references/
 │       └── task-doc-template.md
+├── dev-idea-selector/
+│   ├── SKILL.md
+│   └── agents/
+│       └── openai.yaml
 ├── LICENSE
 └── README.md
 ```
