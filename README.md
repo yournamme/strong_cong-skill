@@ -11,7 +11,7 @@
 | [eda-pcb-coach](./eda-pcb-coach) | 面向电子竞赛、课程项目和 DIY 的 PCB 设计陪练，支持从零设计或已有板改版，覆盖方案讨论、嘉立创 EDA 绘制、检查、打板与文档追踪。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/eda-pcb-coach) |
 | [laicong-writer](./laicong-writer) | 赖聪个人写作风格与共情型内容创作 Skill，把零散想法整理成真诚、有温度、又保留个人味道的中文表达。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/laicong-writer) |
 | [planning-with-doc](./planning-with-doc) | 用一份 `开发任务拆解.md` 串起方案讨论、任务拆解、执行追踪和变更记录，适合多轮 AI 协同开发项目。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/planning-with-doc) |
-| [dev-idea-selector](./dev-idea-selector) | 开发副业选题路由：AI 自动帮你从 Obsidian 素材、真实需求、市场参考里筛出 3-5 个开发候选，你拍板后交给 vibe_coding 去开发。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/dev-idea-selector) |
+| [dev-idea-selector](./dev-idea-selector) | 开发副业选题路由：从 Obsidian 全库（钱/知识/健康/时间/内容生产）按实用价值筛出 3-5 个开发候选，你拍板后交给 vibe_coding 去开发。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/dev-idea-selector) |
 | [article-to-video](./article-to-video) | 图文转视频：把一篇公众号文章自动转成短视频制作四件套（口播稿、UI卡片、分镜+生图提示词、拍摄包）。 | [查看 Skill](https://github.com/yournamme/strong_cong-skill/tree/main/article-to-video) |
 
 ## eda-pcb-coach
@@ -133,14 +133,14 @@
 
 `dev-idea-selector` 是一个"开发副业选题路由"Skill。它解决的不是"怎么开发"，而是"**该开发什么**"。很多用 AI 搞开发的人卡在第一步：网上看别人做的小工具、小游戏、硬件项目，感觉"很容易做、又有用"，但轮到自己想一个就想不出来。这个 Skill 把"凭感觉想选题"变成"AI 按标准筛选题"。
 
-它特别适合两条线互相喂的场景：AI 开发产出作品，开发过程本身变成自媒体内容，内容的反馈又变回下一个开发灵感。这个 Skill 负责整条线最前面的"选"这一环。
+它的第一标准是**实用价值**：解决一个真实存在的小麻烦，省时间、省钱、帮你做判断。内容势能是第二位的，只是顺带好处。它特别适合两条线互相喂的场景：AI 开发产出实用工具，开发过程本身变成自媒体内容，内容的反馈又变回下一个开发灵感。这个 Skill 负责整条线最前面的"选"这一环。
 
 ### 它能做什么？
 
 - 从四个灵感源采集候选：Obsidian 素材池（最优先）、自己反复遇到的麻烦、市场已验证的需求品类、自媒体内容反馈。
-- 用三条过滤线筛选题：是否解决一个真实的小麻烦、是否 1-2 周能出 MVP、过程/成品能否变成至少一条内容。三把都中才进候选。
+- 用三条过滤线筛选题：是否解决一个真实的小麻烦、是否 1-2 周能出 MVP、是否有实用价值（能省时间/省钱/帮做判断）。三把都中才进候选；能变内容是可选的加分项，不再是硬性要求。
 - 结合用户底子（嵌入式、单片机、电赛、硬件、AI agent）做匹配加分。
-- 产出 3-5 个统一格式的开发候选（做什么/给谁用/解决什么/ MVP 多大/怎么变内容/怎么算有价值），让用户拍板。
+- 产出 3-5 个统一格式的开发候选（做什么/给谁用/解决什么麻烦/ MVP 多大/实际怎么用/能变成内容吗/怎么算有价值），让用户拍板。
 - 持续维护一份 `开发选题池.md`（像自媒体的选题池一样，按系列分组、标状态、拍过的划掉），候选没被选中的保留待定，以后还能捡回来。
 
 ### 如何使用

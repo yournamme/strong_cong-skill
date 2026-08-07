@@ -1,7 +1,7 @@
 interface:
   display_name: "Dev Idea Selector / 开发选题路由"
-  short_description: "从 Obsidian 素材、真实麻烦和市场里筛出该开发什么，打分排序给你 3-5 个候选，拍板后交棒给 vibe_coding"
-  default_prompt: "Use $dev-idea-selector to pick what I should build next — read my Obsidian vault and the existing 开发选题池.md, apply the three hard gates, rank by content potential, and give me 3-5 candidate cards to choose from."
+  short_description: "从 Obsidian 全库（钱/知识/健康/时间/内容生产）按实用价值筛出该开发什么，打分排序给你 3-5 个候选，拍板后交棒给 vibe_coding"
+  default_prompt: "Use $dev-idea-selector to pick what I should build next — sweep my Obsidian vault across life domains (money/knowledge/health/time/content), rank by practical value first (content potential second), and hand me 3-5 candidates to choose from."
   examples:
     - "帮我挖开发灵感，看看下一个该做什么"
     - "接着上次的开发选题继续"
